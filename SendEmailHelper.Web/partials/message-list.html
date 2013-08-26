@@ -1,0 +1,27 @@
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span2">
+      <!--Sidebar content-->
+
+      Search: <input ng-model="query">
+      Sort by:
+      <select ng-model="orderProp">
+        <option value="To">To</option>
+        <option value="From">From</option>
+      </select>
+
+    </div>
+    <div class="span10">
+      <!--Body content-->
+
+      <ul class="messages">
+        <li ng-repeat="message in messages | orderBy:orderProp">
+          To: <a href="#/messages/{{message.Id}}">{{message.To}}</a><br/>
+          From: {{message.From}}<br/>
+          Subject: {{message.Subject}}
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>SendEmailHelper.Database</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{ba2edd6c-cd6d-4f82-b4f7-c63401607d5b}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql110DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>SendEmailHelper.Database</RootNamespace>
+    <AssemblyName>SendEmailHelper.Database</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <!-- VS10 without SP1 will not have VisualStudioVersion set, so do that here -->
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <!-- Default to the v10.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="StoredProcedures" />
+    <Folder Include="Tables" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="StoredProcedures\ApplicationSelectAll.sql" />
+    <Build Include="StoredProcedures\MessageSelectByApplication.sql" />
+    <Build Include="StoredProcedures\MessageInsert.sql" />
+    <Build Include="StoredProcedures\CredentialInsert.sql" />
+    <Build Include="StoredProcedures\MessageBccInsert.sql" />
+    <Build Include="StoredProcedures\MessageCcInsert.sql" />
+    <Build Include="StoredProcedures\MessageReplyToInsert.sql" />
+    <Build Include="StoredProcedures\MessageStatusInsert.sql" />
+    <Build Include="StoredProcedures\MessageToInsert.sql" />
+    <Build Include="StoredProcedures\MessageUpdate.sql" />
+    <Build Include="StoredProcedures\MessageToSelectByMessageId.sql" />
+    <Build Include="StoredProcedures\MessageCcSelectByMessageId.sql" />
+    <Build Include="StoredProcedures\MessageBccSelectByMessageId.sql" />
+    <Build Include="StoredProcedures\MessageReplyToSelectByMessageId.sql" />
+    <Build Include="Tables\Application.sql" />
+    <Build Include="StoredProcedures\MessageStatusGetMostRecentByMessageId.sql" />
+    <Build Include="StoredProcedures\TypeMessageStatusGetAll.sql" />
+    <Build Include="StoredProcedures\CredentialSelectByMessageId.sql" />
+    <Build Include="StoredProcedures\MessageSelectById.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="SendEmailHelper.Database.refactorlog" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="RequiredData.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SendEmailHelper.Database.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Tables\Credential.sql" />
+    <Build Include="Tables\Message.sql" />
+    <Build Include="Tables\MessageBcc.sql" />
+    <Build Include="Tables\MessageCc.sql" />
+    <Build Include="Tables\MessageReplyTo.sql" />
+    <Build Include="Tables\MessageStatus.sql" />
+    <Build Include="Tables\MessageTo.sql" />
+    <Build Include="Tables\TypeMessageStatus.sql" />
+  </ItemGroup>
+</Project>

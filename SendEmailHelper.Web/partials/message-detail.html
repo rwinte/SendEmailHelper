@@ -1,0 +1,59 @@
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span12">
+            <!--Body content-->
+
+            <h4>To:</h4>
+            <ul class="unstyled">
+                <li ng-repeat="to in message.To">{{to}}</li>
+            </ul>
+            
+            <h4>From:</h4>
+            <p>{{message.From}}</p>
+            
+            <h4>CC:</h4>
+            <ul class="unstyled">
+                <li ng-repeat="cc in message.Cc">{{cc}}</li>
+            </ul>
+
+            <h4>BCC:</h4>
+            <ul class="unstyled">
+                <li ng-repeat="bcc in message.Bcc">{{bcc}}</li>
+            </ul>
+            
+            <h4>ReplyTo:</h4>
+            <ul class="unstyled">
+                <li ng-repeat="replyto in message.ReplyTo">{{replyto}}</li>
+            </ul>
+            
+            <h4>Subject:</h4>
+            <p>{{message.Subject}}</p>
+
+            <h4>Body:</h4>
+            <p>{{message.Body}}</p>
+            
+            <h4>Connection:</h4>
+            <ul class="unstyled">
+                <li>Host: {{message.Connection.Host}}</li>
+                <li>Port: {{message.Connection.Port}}</li>
+                <li>EnableSsl: {{message.Connection.EnableSsl}}</li>
+            </ul>
+            
+<!--            <h4 ng-if="{{showCredential}}">Credential:</h4>
+            <ul ng-if="{{showCredential}}" class="unstyled">
+                <li>Username: {{message.Credential.Username}}</li>
+                <li>Password: *****</li>
+                <li>Domain: {{message.Credential.Domain}}</li>
+            </ul>-->
+            
+            <h4>Status:</h4>
+            <ul class="unstyled">
+                <li>{{message.Status.Description}}</li>
+                <li>Date: {{message.Status.CreateDateVal | date:medium}}</li>
+            </ul>
+            
+            <h4>Created Date:</h4>
+            <p>{{message.CreateDateVal | date:short}}</p>
+        </div>
+    </div>
+</div>

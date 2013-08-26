@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendEmailHelper.Web", "SendEmailHelper.Web.csproj", "{7A8A8653-DBE7-4E6B-BC00-78F5AFC33951}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendEmailHelper.ServiceModel", "..\SendEmailHelper.ServiceModel\SendEmailHelper.ServiceModel.csproj", "{747E618B-3B86-4B81-87C8-580A6C7DDA5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendEmailHelper.ConsoleClient", "..\SendEmailHelper.ConsoleClient\SendEmailHelper.ConsoleClient.csproj", "{A6439273-B7AA-4CD9-A807-7262CB9C2C1E}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SendEmailHelper.Database", "..\SendEmailHelper.Database\SendEmailHelper.Database.sqlproj", "{BA2EDD6C-CD6D-4F82-B4F7-C63401607D5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendEmailHelper.IntegrationTests", "..\SendEmailHelper.IntegrationTests\SendEmailHelper.IntegrationTests.csproj", "{BDDB3EA1-6AF4-43AD-AFFE-840F141C125A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7A8A8653-DBE7-4E6B-BC00-78F5AFC33951}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A8A8653-DBE7-4E6B-BC00-78F5AFC33951}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A8A8653-DBE7-4E6B-BC00-78F5AFC33951}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A8A8653-DBE7-4E6B-BC00-78F5AFC33951}.Release|Any CPU.Build.0 = Release|Any CPU
+		{747E618B-3B86-4B81-87C8-580A6C7DDA5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{747E618B-3B86-4B81-87C8-580A6C7DDA5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{747E618B-3B86-4B81-87C8-580A6C7DDA5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{747E618B-3B86-4B81-87C8-580A6C7DDA5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6439273-B7AA-4CD9-A807-7262CB9C2C1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6439273-B7AA-4CD9-A807-7262CB9C2C1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6439273-B7AA-4CD9-A807-7262CB9C2C1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6439273-B7AA-4CD9-A807-7262CB9C2C1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA2EDD6C-CD6D-4F82-B4F7-C63401607D5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA2EDD6C-CD6D-4F82-B4F7-C63401607D5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA2EDD6C-CD6D-4F82-B4F7-C63401607D5B}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{BA2EDD6C-CD6D-4F82-B4F7-C63401607D5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA2EDD6C-CD6D-4F82-B4F7-C63401607D5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA2EDD6C-CD6D-4F82-B4F7-C63401607D5B}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{BDDB3EA1-6AF4-43AD-AFFE-840F141C125A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDDB3EA1-6AF4-43AD-AFFE-840F141C125A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDDB3EA1-6AF4-43AD-AFFE-840F141C125A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDDB3EA1-6AF4-43AD-AFFE-840F141C125A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

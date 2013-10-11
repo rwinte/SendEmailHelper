@@ -2,29 +2,61 @@
     <div class="row-fluid">
         <div class="span12">
             <!--Body content-->
+            
+            <button ng-click="save()">Save</button>
 
-            <h4>To:</h4>
+            <div class="inline-header">
+                <h4>To:</h4>
+                <img src="img/add.png" ng-click="showAddTo($index)" ng-class="{hidden: !addToHidden}" alt="Add To"/>
+            </div>
             <ul class="unstyled">
-                <li ng-repeat="to in message.To">{{to}}</li>
+                <li ng-repeat="to in message.To">{{to}} <img src="img/remove2.png" ng-click="removeTo($index)" ng-class="{1:'hidden'}[message.To.length]" alt="Remove"/></li>
             </ul>
+            <div ng-class="{hidden: addToHidden}">
+                <input id="addTo" type="text" ng-model="newTo" />
+                <button ng-click="addTo()">Done</button>
+                <button ng="click" ng-click="cancelAddTo()">Cancel</button>
+            </div>
             
             <h4>From:</h4>
             <p>{{message.From}}</p>
             
-            <h4>CC:</h4>
+            <div class="inline-header">
+                <h4>CC:</h4>
+                <img src="img/add.png" ng-click="showAddCc($index)" ng-class="{hidden: !addCcHidden}" alt="Add CC" />
+            </div>
             <ul class="unstyled">
-                <li ng-repeat="cc in message.Cc">{{cc}}</li>
+                <li ng-repeat="cc in message.Cc">{{cc}} <img src="img/remove2.png" ng-click="removeCc($index)" ng-class="{1:'hidden'}[message.Cc.length]" alt="Remove" /></li> 
             </ul>
-
-            <h4>BCC:</h4>
+            <div ng-class="{hidden: addCcHidden}">
+                <input id="Text1" type="text" ng-model="newCc" />
+                <button ng-click="addCc()">Done</button>
+                <button ng="click" ng-click="cancelAddCc">Cancel</button>
+            </div>
+            <div class="inline-header">
+                <h4>BCC:</h4>
+                <img src="img/add.png" ng-click="showAddBcc($index)" ng-class="{hidden: !addBccHidden}" alt="Add BCC" />
+            </div>
             <ul class="unstyled">
-                <li ng-repeat="bcc in message.Bcc">{{bcc}}</li>
+                <li ng-repeat="bcc in message.Bcc">{{bcc}} <img src="img/remove2.png" ng-click="removeBcc($index)" ng-class="{1:'hidden'}[message.Bcc.length]" alt="Remove" /></li>
             </ul>
-            
-            <h4>ReplyTo:</h4>
+            <div ng-class="{hidden: addBccHidden}">
+                <input id="Text2" type="text" ng-model="newBcc" />
+                <button ng-click="addBcc()">Done</button>
+                <button ng="click" ng-click="cancelAddBcc">Cancel</button>
+            </div>
+            <div class="inline-header">
+                <h4>Reply To:</h4>
+                <img src="img/add.png" ng-click="showAddReplyTo($index)" ng-class="{hidden: !addReplyToHidden}" alt="Add Reply To" />
+            </div>
             <ul class="unstyled">
-                <li ng-repeat="replyto in message.ReplyTo">{{replyto}}</li>
+                <li ng-repeat="replyto in message.ReplyTo">{{replyto}} <img src="img/remove2.png" ng-click="removeReplyTo($index)" ng-class="{1:'hidden'}[message.ReplyTo.length]" alt="Remove" /></li>
             </ul>
+            <div ng-class="{hidden: addReplyToHidden}">
+                <input id="Text3" type="text" ng-model="newReplyTo" />
+                <button ng-click="addReplyTo()">Done</button>
+                <button ng="click" ng-click="cancelAddReplyTo">Cancel</button>
+            </div>
             
             <h4>Subject:</h4>
             <p>{{message.Subject}}</p>
@@ -52,7 +84,7 @@
                 <li>Date: {{message.Status.CreateDateVal | date:medium}}</li>
             </ul>
             
-            <h4>Created Date:</h4>
+            <h4>Created:</h4>
             <p>{{message.CreateDateVal | date:short}}</p>
         </div>
     </div>

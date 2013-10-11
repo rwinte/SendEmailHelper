@@ -7,7 +7,7 @@ namespace SendEmailHelper.ServiceModel
 {   
     [Route("/messages", "GET, OPTIONS")]
     [Route("/messages/applications/{ApplicationId}")]
-    public class Messages : IReturn<MessagesResponse>
+    public class Messages : IReturn<List<Message>>
     {
         public int ApplicationId { get; set; }
     }

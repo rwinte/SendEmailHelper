@@ -67,8 +67,9 @@ namespace SendEmailHelper.Web.Services
             // Resend e-mail if requested
             if (request.ResendEmail)
             {
+                var savedMesssage = ds.GetMessage(request.Id);
                 var client = new EmailClient();
-                var emailResult = client.Send(request);
+                var emailResult = client.Send(savedMesssage);
 
                 if (emailResult.Success)
                 {

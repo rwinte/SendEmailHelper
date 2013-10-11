@@ -79,6 +79,10 @@
     <Build Include="StoredProcedures\TypeMessageStatusGetAll.sql" />
     <Build Include="StoredProcedures\CredentialSelectByMessageId.sql" />
     <Build Include="StoredProcedures\MessageSelectById.sql" />
+    <Build Include="StoredProcedures\MessageToDelete.sql" />
+    <Build Include="StoredProcedures\MessageCcDelete.sql" />
+    <Build Include="StoredProcedures\MessageBccDelete.sql" />
+    <Build Include="StoredProcedures\MessageReplyToDelete.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="SendEmailHelper.Database.refactorlog" />

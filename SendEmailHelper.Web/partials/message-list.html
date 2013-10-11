@@ -1,27 +1,49 @@
 <div class="container-fluid">
-  <div class="row-fluid">
-    <div class="span2">
-      <!--Sidebar content-->
+    <div class="row-fluid">
+        <div class="span2">
+            <!--Sidebar content-->
 
-      Search: <input ng-model="query">
-      Sort by:
-      <select ng-model="orderProp">
-        <option value="To">To</option>
-        <option value="From">From</option>
-      </select>
+            Search: <input ng-model="query">
+            Sort by:
+            <select ng-model="orderProp">
+                <option value="To">To</option>
+                <option value="From">From</option>
+            </select>
 
+        </div>
+        <div class="span10">
+            <!--Body content-->
+        
+            <table class="table">
+                <caption>Messages</caption>
+                <thead>
+                    <tr>
+                        <td>Id</td>
+                        <td>To</td>
+                        <td>From</td>
+                        <td>Subject</td>
+                        <td>Resend</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="message in messages | orderBy:orderProp">
+                        <td>{{message.Id}}</td>
+                        <td><a href="#/messages/{{message.Id}}">{{message.To}}</a></td>
+                        <td>{{message.From}}</td>
+                        <td>{{message.Subject}}</td>
+                        <td><a href="#" ng-click="resendEmail(message)">Resend Email</a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+<!--            <ul class="messages">
+                <li ng-repeat="message in messages | orderBy:orderProp">
+                    To: <a href="#/messages/{{message.Id}}">{{message.To}}</a><br/>
+                    From: {{message.From}}<br/>
+                    Subject: {{message.Subject}}<br/>
+                    <a href="#" ng-click="resendEmail(message)">Resend Email</a>
+                </li>
+            </ul>-->
+        </div>
     </div>
-    <div class="span10">
-      <!--Body content-->
-
-      <ul class="messages">
-        <li ng-repeat="message in messages | orderBy:orderProp">
-          To: <a href="#/messages/{{message.Id}}">{{message.To}}</a><br/>
-          From: {{message.From}}<br/>
-          Subject: {{message.Subject}}
-        </li>
-      </ul>
-
-    </div>
-  </div>
 </div>

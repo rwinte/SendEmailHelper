@@ -22,7 +22,7 @@ namespace SendEmailHelper.Web.Util
                 };
 
                 // If credential username is provided, assume credentials are desired
-                if (!string.IsNullOrWhiteSpace(request.Credential.Username))
+                if (request.Credential != null && !string.IsNullOrWhiteSpace(request.Credential.Username))
                 {
                     var credential = new NetworkCredential(request.Credential.Username, request.Credential.Password,
                         request.Credential.Domain);

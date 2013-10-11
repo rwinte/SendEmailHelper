@@ -4,3 +4,11 @@
 ul.messages {
     list-style: none;
 }
+
+.hidden {
+    display: none !important;
+}
+
+.inline-header {
+    position: relative;
+}

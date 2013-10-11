@@ -1,24 +1,22 @@
 ﻿CREATE PROCEDURE [dbo].[MessageUpdate]
     @Id int,
-	@ApplicationId int,
+	@ApplicationId int = NULL,
 	@From varchar(256),
 	@Sender varchar(256),
 	@Subject varchar(100),
 	@Body varchar(max),
-	@Host varchar(255),
+	@Host varchar(255) = NULL,
 	@Port int = 25,
-	@EnableSsl bit = 0,
-	@CreateDate datetime
+	@EnableSsl bit = 0
 AS
 	UPDATE [dbo].[Message]
-	   SET [ApplicationId] = @ApplicationId
+	   SET [ApplicationId] = coalesce(@ApplicationId, [ApplicationId])
 		  ,[From] = @From
 		  ,[Sender] = @Sender
 		  ,[Subject] = @Subject
 		  ,[Body] = @Body
-		  ,[Host] = @Host
+		  ,[Host] = coalesce(@Host, [Host])
 		  ,[Port] = @Port
 		  ,[EnableSsl] = @EnableSsl
-		  ,[CreateDate] = @CreateDate
 	 WHERE [Id] = @Id
 

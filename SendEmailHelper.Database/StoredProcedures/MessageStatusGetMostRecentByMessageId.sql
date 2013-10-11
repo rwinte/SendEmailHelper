@@ -3,10 +3,12 @@
 AS
 SELECT TOP 1 [MessageId]
       ,[TypeMessageStatusId]
+	  ,tms.[MessageStatusText]
       ,[AdditionalMessage]
       ,[Exception]
       ,[CreateDate]
-  FROM [dbo].[MessageStatus]
+  FROM [dbo].[MessageStatus] ms
+  INNER JOIN [TypeMessageStatus] tms ON tms.Id = ms.TypeMessageStatusId
   WHERE [MessageId] = @MessageId
   ORDER BY [CreateDate] DESC
 
